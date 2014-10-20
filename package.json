@@ -28,6 +28,8 @@
     "reactify": "^0.14.0"
   },
   "dependencies": {
-    "ampersand-router": "^1.0.5"
+    "ampersand-router": "^1.0.5",
+    "es6-promise": "^2.0.0",
+    "react": "^0.11.2"
   }
 }

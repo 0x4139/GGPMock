@@ -33,16 +33,16 @@ gulp.task('default',['sass','js'], function() {
 		notify: false,
 		server: {
 			baseDir: ['app'],
-			middleware: [
-			function (req, res, next) {
-				if(req.url == '/' || req.url.indexOf('/browser-sync/browser-sync-client')>-1 || fs.existsSync('./app'+req.url)){
-					next();
-				}
-				else{
-					req.url ='/index.html';
-					next();
-				}
-			}]
+      middleware: [
+      function (req, res, next) {
+        if(req.url == '/' || req.url.indexOf('/browser-sync/browser-sync-client')>-1 || fs.existsSync('./app'+req.url)){
+          next();
+        }
+        else{
+          req.url ='/index.html';
+          next();
+        }
+      }]
 		}
 	});
 	gulp.watch(['app/**/*.html', '!app/bower_components/**/*.*'],['reload']);
